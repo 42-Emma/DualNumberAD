@@ -1,0 +1,125 @@
+### A Pluto.jl notebook ###
+# v0.20.21
+
+using Markdown
+using InteractiveUtils
+
+# ╔═╡ 71ca3880-0c93-11f1-acd9-db542f23bedb
+import Pkg
+
+# ╔═╡ f6903917-8136-4de7-b6ed-03ded247fbe7
+Pkg.activate(pwd())
+
+# ╔═╡ c5fb05b5-1056-4e4d-8307-220c29e05bd3
+using DualNumberAD
+
+# ╔═╡ 9c555b5f-e34d-44da-8444-a622a33f6928
+Pkg.instantiate()
+
+# ╔═╡ 55196428-50d2-4573-8d0c-9f6cdfd75f31
+md"""
+**Test Functions**
+"""
+
+# ╔═╡ 3f8297d0-62be-4940-92b0-c087ff566833
+f1(x) = x^3 + 2x - 5
+
+# ╔═╡ fd69bcb9-60a2-443e-97eb-49fca2bca822
+f2(x) = (x^2 + 1) * (3x - 4)
+
+# ╔═╡ 90cfaaa4-53e6-4ce2-97f3-fbe33bbb1336
+f3(x) = (x^2 + 1) / (x + 2)
+
+# ╔═╡ 46eb1527-3cf7-4e2f-b357-0ee10b32d6c8
+f4(x) = sin(x) + x*cos(x)
+
+# ╔═╡ 5b3d4316-d560-4e75-a97a-6ca1fd1b9fc6
+f5(x) = exp(x^2)
+
+# ╔═╡ 23e08041-4206-47ee-8175-4bdd4b006e61
+f6(x) = sqrt(x + 4)
+
+# ╔═╡ 02306fee-897b-43d0-b76d-4ae0ca125cca
+f7(x) = 3^x
+
+# ╔═╡ 96a132e2-3da1-4bef-9391-96e95af41ed1
+md"""
+**First Derivatives**
+"""
+
+# ╔═╡ 5089247f-d025-488a-b231-2fda28bf9b52
+deriv1(f1, 2.0)
+
+# ╔═╡ 8f536254-d37f-4632-9dcd-0dc700e970c6
+deriv1(f2, 2.0)
+
+# ╔═╡ 5bb701c5-fc58-45a4-915e-2d1fd5899948
+deriv1(f3, 1.0)
+
+# ╔═╡ aeb3f95e-ad60-48ae-a8d0-0d32a3e65be2
+deriv1(f4, 0.5)
+
+# ╔═╡ 690362c2-f58d-446f-964c-19cb344bd7c2
+deriv1(f5, 0.3)
+
+# ╔═╡ c2430995-71b4-4f19-a3a2-acd9acd8f4a6
+deriv1(f6, 0.0)
+
+# ╔═╡ 00a4e835-a45d-4282-b471-35050cb33132
+deriv1(f7, 2.0)
+
+# ╔═╡ 7efe1551-391a-4c82-b2eb-c0596d7f31af
+md"""
+**Second Derivatives**
+"""
+
+# ╔═╡ 9a4972cf-2909-4b9e-ae97-f4f8842db5b7
+deriv2(f1, 2.0)
+
+# ╔═╡ 582c34ee-f120-4321-b093-7ff3c6c9cbf1
+deriv2(f2, 2.0)
+
+# ╔═╡ 6e069b0e-8a6c-4824-8cc8-a1d8d5fd8f2d
+deriv2(f3, 1.0)
+
+# ╔═╡ 0bdc5adb-ff74-4ab6-b398-19d02e741d8f
+deriv2(f4, 0.5)
+
+# ╔═╡ b9560e80-f7d5-41d6-b3bd-8f862a71288d
+deriv2(f5, 0.3)
+
+# ╔═╡ 08ae3f36-8dc5-4cb8-b80e-735e0ec420ef
+deriv2(f6, 0.0)
+
+# ╔═╡ 10f7ff25-b2bd-49a2-9bbe-d131db2bd7b1
+deriv2(f7, 2.0)
+
+# ╔═╡ Cell order:
+# ╠═71ca3880-0c93-11f1-acd9-db542f23bedb
+# ╠═f6903917-8136-4de7-b6ed-03ded247fbe7
+# ╠═9c555b5f-e34d-44da-8444-a622a33f6928
+# ╠═c5fb05b5-1056-4e4d-8307-220c29e05bd3
+# ╟─55196428-50d2-4573-8d0c-9f6cdfd75f31
+# ╠═3f8297d0-62be-4940-92b0-c087ff566833
+# ╠═fd69bcb9-60a2-443e-97eb-49fca2bca822
+# ╠═90cfaaa4-53e6-4ce2-97f3-fbe33bbb1336
+# ╠═46eb1527-3cf7-4e2f-b357-0ee10b32d6c8
+# ╠═5b3d4316-d560-4e75-a97a-6ca1fd1b9fc6
+# ╠═23e08041-4206-47ee-8175-4bdd4b006e61
+# ╠═02306fee-897b-43d0-b76d-4ae0ca125cca
+# ╟─96a132e2-3da1-4bef-9391-96e95af41ed1
+# ╠═5089247f-d025-488a-b231-2fda28bf9b52
+# ╠═8f536254-d37f-4632-9dcd-0dc700e970c6
+# ╠═5bb701c5-fc58-45a4-915e-2d1fd5899948
+# ╠═aeb3f95e-ad60-48ae-a8d0-0d32a3e65be2
+# ╠═690362c2-f58d-446f-964c-19cb344bd7c2
+# ╠═c2430995-71b4-4f19-a3a2-acd9acd8f4a6
+# ╠═00a4e835-a45d-4282-b471-35050cb33132
+# ╟─7efe1551-391a-4c82-b2eb-c0596d7f31af
+# ╠═9a4972cf-2909-4b9e-ae97-f4f8842db5b7
+# ╠═582c34ee-f120-4321-b093-7ff3c6c9cbf1
+# ╠═6e069b0e-8a6c-4824-8cc8-a1d8d5fd8f2d
+# ╠═0bdc5adb-ff74-4ab6-b398-19d02e741d8f
+# ╠═b9560e80-f7d5-41d6-b3bd-8f862a71288d
+# ╠═08ae3f36-8dc5-4cb8-b80e-735e0ec420ef
+# ╠═10f7ff25-b2bd-49a2-9bbe-d131db2bd7b1
